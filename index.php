@@ -1,0 +1,125 @@
+<?php 
+include 'vote.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="img/favicon.ico">
+		<title>GoodPoll</title>
+		<link href="mystyle.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Bootstrap core CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+  </head>
+  <body class="bodyfon">
+
+    <!-- Fixed navbar -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand logo" href="#"><span  class="logo">GoodPoll</span></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	<div class="container votes">
+		<div id="vote" class="row">
+	<div class="col-sm-4 col-md-3 col-md-push-9 mobiles">
+				<form action=""    method="get">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading box" data-toggle="collapse" data-parent="#selector" href="#collapseOne">
+								<h4 class="panel-title" >
+									Производитель
+								</h4>  
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">					
+									<label><input type="checkbox" name="tel[1]" value="microsoft"  id="1" <? echo $tel1['microsoft'];?>><span>Microsoft</span></label>
+									<label><input type="checkbox" name="tel[2]"  value="samsung"  id="2" <? echo $tel1['samsung'];?>><span>Samsung </span></label><br>
+									<label><input type="checkbox" name="tel[3]"  value="lenovo" id="3" <? echo $tel1['lenovo'];?>><span>Lenovo </span></label>
+									<label><input type="checkbox" name="tel[4]"  value="apple" id="4" <? echo $tel1['apple'];?>><span>Apple </span></label>													
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading box" data-toggle="collapse" data-parent="#selector" href="#collapseTwo">
+								<h4 class="panel-title">
+									Выберите память
+								</h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse in">
+								<div class="panel-body text-center">
+								 <select name="memory">
+									<option ></option>
+									<option value="m256" <?php if($_GET['memory']=='m256') echo 'selected'; ?>>256 Mb</option>
+									<option value="m512"<?php if($_GET['memory']=='m512') echo 'selected'; ?>>512 Mb</option>
+									<option value="m1"<?php if($_GET['memory']=='m1') echo 'selected'; ?>>1 Gb</option>
+									<option value="m2"<?php if($_GET['memory']=='m2') echo 'selected'; ?>>2 Gb</option>
+								 </select>
+								</div>
+							</div>
+						</div>
+						 <div class="panel panel-default">
+							<div class="panel-heading box" data-toggle="collapse" data-parent="#selector" href="#collapseThree">
+								<h4 class="panel-title">
+									Тип связи
+								</h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<label><input type="checkbox" name="set[2G]" id="1" value="2G"<? echo $set1['2G'];?>><span>2G</span></label>
+									<label><input type="checkbox" name="set[3G]" id="2" value="3G"<? echo $set1['3G'];?>><span>3G</span></label>
+									<label><input type="checkbox" name="set[4G]" id="3" value="4G"<? echo $set1['4G'];?>><span>4G</span></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<input class="buttom text-center" name="submit" type="submit" value="ПРИМЕНИТЬ">
+          		</form>	
+			</div>	
+			<div class="col-sm-8 col-md-9 col-md-pull-3">		
+				<div class="row">	
+					
+							
+							<? echo $x; ?>
+
+				</div>	
+ 
+			</div>	         			
+		</div>
+    </div> <!-- /container -->
+    <div id="footer">
+      <div class="container text-center ">
+			<p> Copyright <i class="fa fa-copyright"></i>. 2015 by Donkovtsev Arthur.</p>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="docs.min.js"></script>
+  </body>
+</html>
