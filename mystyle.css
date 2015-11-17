@@ -29,12 +29,7 @@ input:checked + span{
 .mobile>img {
 	width: 40%;
 }
-.mobile>img.len {
-	width: 48%;
-}
-.mobile>img.iph {
-	width: 37%;
-}
+
 .mobile>.caption h3 {
 	font-size: 1.5em;
 }
@@ -63,15 +58,15 @@ input:checked + span{
 	height: 100%;
 	margin-bottom: 100px;
 }
-
+.vsego {
+	font-family: 'Roboto Condensed';
+	color: #fff;
+}
 .panel.panel-default>.panel-heading.box {
 	background: rgba(0, 0, 0, 0.8);
 	color: #fff;
 }
-.panel.panel-default>.panel-heading.box:hover {
-	background: #fff;
-	color: #000;
-}
+
 
 .panel-heading>h4 {
 	font-family: 'Roboto Condensed';

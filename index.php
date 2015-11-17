@@ -71,13 +71,13 @@ include 'vote.php';
 							</div>
 							<div id="collapseTwo" class="panel-collapse collapse in">
 								<div class="panel-body text-center">
-								 <select name="memory">
+							<select name="memory">
 									<option ></option>
-									<option value="m256" <?php if($_GET['memory']=='m256') echo 'selected'; ?>>256 Mb</option>
-									<option value="m512"<?php if($_GET['memory']=='m512') echo 'selected'; ?>>512 Mb</option>
-									<option value="m1"<?php if($_GET['memory']=='m1') echo 'selected'; ?>>1 Gb</option>
-									<option value="m2"<?php if($_GET['memory']=='m2') echo 'selected'; ?>>2 Gb</option>
-								 </select>
+									<option value="256" <?php if($_GET['memory']=='256') echo 'selected'; ?>>256 Mb</option>
+									<option value="512"<?php if($_GET['memory']=='512') echo 'selected'; ?>>512 Mb</option>
+									<option value="1"<?php if($_GET['memory']=='1') echo 'selected'; ?>>1 Gb</option>
+									<option value="2"<?php if($_GET['memory']=='2') echo 'selected'; ?>>2 Gb</option>
+							 </select>
 								</div>
 							</div>
 						</div>
@@ -89,9 +89,9 @@ include 'vote.php';
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<div class="panel-body">
-									<label><input type="checkbox" name="set[2G]" id="1" value="2G"<? echo $set1['2G'];?>><span>2G</span></label>
-									<label><input type="checkbox" name="set[3G]" id="2" value="3G"<? echo $set1['3G'];?>><span>3G</span></label>
-									<label><input type="checkbox" name="set[4G]" id="3" value="4G"<? echo $set1['4G'];?>><span>4G</span></label>
+									<label><input type="checkbox" name="set[2]" id="1" value="2g"<? echo $set1['2g'];?>><span>2G</span></label>
+									<label><input type="checkbox" name="set[3]" id="2" value="3g"<? echo $set1['3g'];?>><span>3G</span></label>
+									<label><input type="checkbox" name="set[4]" id="3" value="4g"<? echo $set1['4g'];?>><span>4G</span></label>
 								</div>
 							</div>
 						</div>
@@ -103,7 +103,7 @@ include 'vote.php';
 				<div class="row">	
 					
 							
-							<? echo $x; ?>
+							<?php echo $html; ?>
 
 				</div>	
  
