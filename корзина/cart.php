@@ -5,7 +5,8 @@ header('Content-Type: text/html; charset=utf-8');
 $tovar = ['name'=>'Товар','desc'=>'Описание'];
 $tovar2 = ['name2'=>'Товар2','desc2'=>'Описание2'];
 
-session_start('1');
+session_start();
+
 $_SESSION['sub'] = $_GET['sub'];
 $_SESSION['sub2'] = $_GET['sub2'];
 if(isset($_SESSION['sub'] )) {
@@ -18,6 +19,7 @@ $_SESSION['name2'] = $tovar2['name2'];
 $_SESSION['desc2'] = $tovar2['desc2'];
 
 }
+
 ?>
 
 <div> <a href="mail.php">корзина</a></div>

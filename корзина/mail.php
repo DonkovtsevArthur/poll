@@ -1,7 +1,6 @@
-﻿<?php
-
-
-session_start('1');
+<meta http-equiv='refresh' content='5; url=https://donkovtsevarthur.ru/cart.php'>
+<?php
+session_start();
 header('Content-Type: text/html; charset=utf-8');
 $html .= '
 	<h2>'.$_SESSION['name'].'</h2>
@@ -10,45 +9,54 @@ $html2 .= '
 	<h2>'.$_SESSION['name2'].'</h2>
 	<p>'.$_SESSION['desc2'].'</p>';
 	
-$_SESSION['mail'] = $_POST['mail'];	
-	if(isset($_SESSION['mail'])) {
+$mail = $_POST['mail'];	
+	if(isset($mail)) {
 		$html_mail .= '<input type="email" name="email" placeholder="введите свой email"> ';	
 	}
-	$_SESSION['email'] = $_POST['email'];
 	
-	if(isset($_SESSION['mail']) and ($_SESSION['email'])) {//почта
+	
+	if(isset($mail) and isset($_POST['email'])) {
+		$email = $_POST['email'];
+		//почта
+		$to= $email . ", " ; //обратите внимание на запятую
+	/* тема/subject */
+		$subject = "Заказ с donkovtsetarthur.ru";
+	/* сообщение */
+		$message = '
+		<html>
+		<head>
+		 <title></title>
+		</head>
+		<body>
+		<p>Спасибо за заказ</p>
+		<div>'.$html.'</div>
+		<div>'.$html2.'</div>
+		</body>
+		</html>
+		';
+	/* Для отправки HTML-почты вы можете установить шапку Content-type. */
+	$headers= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-type: text/html; charset=utf-8\r\n";
+
+	/* дополнительные шапки */
+	$headers .= "From: <info@donkovtsevarthur.ru>\r\n";
+	$headers .= "Cc: info@donkovtsevarthur.ru\r\n";
+	$headers .= "Bcc: info@donkovtsevarthur.ru\r\n";
+
+	/* и теперь отправим из */
+	$send = mail($to, $subject, $message, $headers);
+	if(isset($send) == true) {
 		
-		$to  = "<janeair-20@mail.ru>, " ; 
-		$to .= "<donkovtsev@icloud.com>"; 
-
-		$subject = "Ваш заказ"; 
-
-		$message = ' 
-			<html> 
-				<head> 
-					<title>Заказ товара</title> 
-				</head> 
-				<body> 
-					<h1>Спасибо за заказ!</h1>
-					<p>Наименование:'.$html.'<hr>'.$html2.'</p> 
-				
-				</body> 
-			</html>'; 
-
-		$headers  = "Content-type: text/html; charset=utf-8 \r\n"; 
-		$headers .= "From: internet-shop <me@example.com>\r\n"; 
-		$headers .= "Bcc: donkovtsev@icloud.com\r\n"; 
-
-		$send = mail($to, $subject, $message, $headers); 
-		if ($send == 'true')
-		{echo 'заказ отправлен';}
-		else {echo "Ошибка, сообщение не отправлено!";}
-
+		echo "спасибо за заказ! Через 5 секунд вы вернетесь назад <a href='https://donkovtsevarthur.ru/cart.php'></a>";
+		
+	} else{echo 'сделайте заказ';}	
+		
 	}
 
 ?>
 <form action="" method="post">
-<div style="border:1px solid #000; width:100px;margin: 10px 0px 5px 0px;">
+<a href="https://donkovtsevarthur.ru/cart.php"> назад</a>
+<div style="border:1px solid #000; width:400px;margin: 10px 0px 5px 0px;">
 
 <?php echo $html ?>
 
